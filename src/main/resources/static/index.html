@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Chat Network</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        .chat-meta li:not(:first-child):before {
+            content: "-";
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="nk-body npc-invest bg-lighter no-touch nk-nio-theme chat-profile-autohide as-mobile">
+
+<div id="username-page">
+    <div class="nk-app-root">
+        <div class="nk-main ">
+            <div class="nk-wrap nk-wrap-nosidebar">
+                <div class="nk-content ">
+                    <div class="nk-split nk-split-page nk-split-md">
+                        <div class="nk-split-content nk-block-area nk-block-area-column nk-auth-container bg-white">
+                            <div class="nk-block nk-block-middle nk-auth-body">
+                                <div class="brand-logo pb-5">
+                                    <a href="#" class="logo-link">
+                                        <img class="logo-img logo-img-lg" src="./images/icon.png" alt="logo">
+                                    </a>
+                                </div>
+                                <div class="nk-block-head">
+                                    <div class="nk-block-head-content">
+                                        <h5 class="nk-block-title fw-bolder">Connection</h5>
+                                        <div class="nk-block-des">
+                                            <p>Welcome back to us, Please log in to continue!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form method="post" id="usernameForm" name="usernameForm">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label required">Username</label>
+                                        <div class="form-control-wrap">
+                                            <input type="text" id="name" name="name" required="required" placeholder="Enter your username..." class="form-control l form-control-lg">
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-lg btn-primary btn-block">Login</button>
+                                </form>
+                            </div>
+                            <div class="nk-block nk-auth-footer">
+                                <div class="mt-3"><p>© 2024 <strong>Websocket - Chat</strong>. Thanh Tuan Le.</p></div>
+                            </div>
+                        </div>
+                        <div id="bg" class="nk-split-content nk-split-stretch bg-abstract" data-controller="background" style="background: url(./images/zenitsu1.jpg) rgba(0,0,0,0.3); background-size: cover; background-blend-mode: overlay;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="chat-page" class="hidden">
+    <div class="nk-app-root">
+        <div class="nk-wrap ">
+            <div class="nk-content nk-content-fluid">
+                <div class="container-xl wide-xl">
+                    <div class="nk-content-inner">
+                        <div class="nk-content-body">
+                            <div class="nk-chat shadow">
+                                <div class="nk-chat-body show-chat">
+                                    <div class="nk-chat-head">
+                                        <ul class="nk-chat-head-info">
+                                            <li class="nk-chat-head-user">
+                                                <div class="user-info">
+                                                    <div class="lead-text" id="lead-text">Websocket</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <ul class="nk-chat-head-tools">
+                                            <li>
+                                                <button class="btn btn-round btn-danger" id="logout">
+                                                    Quit
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="nk-chat-panel" id="messageArea">
+                                    </div>
+                                    <div class="nk-chat-editor">
+                                        <form method="post" id="messageForm" name="messageForm" class="nk-chat-editor-form d-inline-block">
+                                            <div class="form-control-wrap">
+                                                <input aria-label="message" type="text" name="message" class="form-control form-control-simple no-resize" id="message" placeholder="Message..." />
+                                            </div>
+                                        </form>
+                                        <ul class="nk-chat-editor-tools g-2">
+                                            <li>
+                                                <button type="submit" form="messageForm" class="btn btn-round btn-primary">
+                                                    Send
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-footer nk-footer-fluid bg-lighter">
+                <div class="container-xl">
+                    <div class="nk-footer-wrap">
+                        <div class="nk-footer-copyright"><p>© 2024 <strong>Websocket - Chat</strong>. Thanh Tuan Le.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./js/alert.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js" integrity="sha512-1QvjE7BtotQjkq8PxLeF6P46gEpBRXuskzIVgjFpekzFVF4yjRgrQvTG1MTOJ3yQgvTteKAcO7DSZI92+u/yZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js" integrity="sha512-iKDtgDyTHjAitUDdLljGhenhPwrbBfqTKWO1mkhSFH3A7blITC9MhYon6SjnMhp4o0rADGw9yAC6EW4t5a4K3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
